@@ -1,0 +1,17 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: 'dl-drawer: A Simple Deep Learning Drawer Tool. '
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Redwan Ahmed Rizvee
+    email: rizveeredwan.csedu@gmail.com
+    name-suffix: Rizvee
+    name-particle: Redwan Ahmed
+    family-names: Ahmed
+    affiliation: University of Dhaka
+    orcid: 'https://orcid.org/0000-0001-5056-1701'
