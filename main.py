@@ -10,7 +10,7 @@ def create_alex_net():
 
     obj.add_arrow_with_text(component_gap=5, length=30, triangle_size=5, texts=[], line_gap=1)
 
-    obj.add_cube(square_size=55, factor=2, depth=96, texts=["CONV", "F=11x11", "S=4", "Same"], angle=45,
+    obj.add_cube(width=55, height=55, factor=2, depth=96, texts=["CONV", "F=11x11", "S=4", "Same"], angle=45,
                  color="#002366", kernel_size=5,
                  filter_color="yellow", line_gap=10, component_gap=5)
 
@@ -20,7 +20,7 @@ def create_alex_net():
                  filter_color="yellow", line_gap=10)
     """
 
-    obj.add_cube(square_size=27, factor=2, depth=256, texts=["CONV", "F=5x5", "S = 1", "Same"], angle=45,
+    obj.add_cube(width=27, height=27, factor=2, depth=256, texts=["CONV", "F=5x5", "S = 1", "Same"], angle=45,
                  color="#002366", kernel_size=3,
                  filter_color="yellow", line_gap=10, component_gap=5)
 
@@ -31,13 +31,13 @@ def create_alex_net():
                  filter_color="yellow", line_gap=10)
     """
 
-    obj.add_cube(square_size=13, factor=2, depth=384, texts=["CONV", "F=3x3", "S = 1", "Same"], angle=45,
+    obj.add_cube(width=13, height=13, factor=2, depth=384, texts=["CONV", "F=3x3", "S = 1", "Same"], angle=45,
                  color="#002366", kernel_size=3,
                  filter_color="yellow", line_gap=10, component_gap=5)
 
     obj.add_arrow_with_text(component_gap=5, length=30, triangle_size=5, texts=[], line_gap=1, forced_x_change=-150)
 
-    obj.add_cube(square_size=13, factor=2, depth=384, texts=["CONV", "F=3x3", "S = 1", "Same"], angle=45,
+    obj.add_cube(width=13, height=13, factor=2, depth=384, texts=["CONV", "F=3x3", "S = 1", "Same"], angle=45,
                  color="#002366", kernel_size=3,
                  filter_color="yellow", line_gap=10, component_gap=5)
 
@@ -48,13 +48,13 @@ def create_alex_net():
                  filter_color="yellow", line_gap=10)
     """
 
-    obj.add_cube(square_size=13, factor=2, depth=256, texts=["CONV", "F=3x3", "S = 1", "Same"], angle=45,
+    obj.add_cube(width=13, height=13, factor=2, depth=256, texts=["CONV", "F=3x3", "S = 1", "Same"], angle=45,
                  color="#002366", kernel_size=2,
                  filter_color="yellow", line_gap=10, component_gap=5)
 
     obj.add_arrow_with_text(component_gap=5, length=30, triangle_size=5,
                             texts=["Max", "Pool", "F=2x2", "S = 2", "Same"], line_gap=1, forced_x_change=-50)
-    obj.add_cube(square_size=4, factor=2, depth=90, texts=["Pool", "6x6x256"], angle=45, color="#FFAA1D",
+    obj.add_cube(width=4, height=4, factor=2, depth=90, texts=["Pool", "6x6x256"], angle=45, color="#FFAA1D",
                  kernel_size=None,
                  filter_color="yellow", line_gap=10, component_gap=5)
 
@@ -85,7 +85,7 @@ def create_leaf_net():
 
     obj.add_arrow_with_text(component_gap=5, length=30, triangle_size=5, texts=[], line_gap=1)
 
-    obj.add_cube(square_size=73, factor=2, depth=50, texts=["CONV", "F=11x11", "S=3", "Same"], angle=45,
+    obj.add_cube(width=73, height=73, factor=2, depth=50, texts=["CONV", "F=11x11", "S=3", "Same"], angle=45,
                  color="#002366", kernel_size=5,
                  filter_color="yellow", line_gap=10, component_gap=5)
 
@@ -95,7 +95,7 @@ def create_leaf_net():
                  filter_color="yellow", line_gap=10)
     """
 
-    obj.add_cube(square_size=36, factor=2, depth=100, texts=["CONV", "F=11x11", "S = 1", "Same"], angle=45,
+    obj.add_cube(width=36, height=36, factor=2, depth=100, texts=["CONV", "F=11x11", "S = 1", "Same"], angle=45,
                  color="#002366", kernel_size=3,
                  filter_color="yellow", line_gap=10, component_gap=5)
 
@@ -106,13 +106,13 @@ def create_leaf_net():
                  filter_color="yellow", line_gap=10)
     """
 
-    obj.add_cube(square_size=18, factor=2, depth=150, texts=["CONV", "F=5x5", "S = 1", "Same"], angle=45,
+    obj.add_cube(width=18, height=18, factor=2, depth=150, texts=["CONV", "F=5x5", "S = 1", "Same"], angle=45,
                  color="#002366", kernel_size=3,
                  filter_color="yellow", line_gap=10, component_gap=5)
 
     obj.add_arrow_with_text(component_gap=5, length=30, triangle_size=5, texts=[], line_gap=1, forced_x_change=0)
 
-    obj.add_cube(square_size=18, factor=2, depth=100, texts=["CONV", "F=5x5", "S = 1", "Same"], angle=45,
+    obj.add_cube(width=18, height=18, factor=2, depth=100, texts=["CONV", "F=5x5", "S = 1", "Same"], angle=45,
                  color="#002366", kernel_size=3,
                  filter_color="yellow", line_gap=10, component_gap=5)
 
@@ -123,13 +123,13 @@ def create_leaf_net():
                  filter_color="yellow", line_gap=10)
     """
 
-    obj.add_cube(square_size=9, factor=2, depth=90, texts=["CONV", "F=3x3", "S = 1", "Same"], angle=45,
+    obj.add_cube(width=9, height=9, factor=2, depth=90, texts=["CONV", "F=3x3", "S = 1", "Same"], angle=45,
                  color="#002366", kernel_size=2,
                  filter_color="yellow", line_gap=10, component_gap=5)
 
     obj.add_arrow_with_text(component_gap=5, length=30, triangle_size=5,
                             texts=["Max", "Pool", "F=2x2", "S = 2", "Same"], line_gap=1, forced_x_change=0)
-    obj.add_cube(square_size=4, factor=2, depth=90, texts=["Pool", "4x4x90"], angle=45, color="#FFAA1D",
+    obj.add_cube(width=4,height=4, factor=2, depth=90, texts=["Pool", "4x4x90"], angle=45, color="#FFAA1D",
                  kernel_size=None,
                  filter_color="yellow", line_gap=10, component_gap=5)
 
@@ -160,13 +160,13 @@ def create_vgg16_net():
 
     obj.add_arrow_with_text(component_gap=5, length=30, triangle_size=5, texts=[], line_gap=1)
 
-    obj.add_cube(square_size=227, factor=0.5, depth=64, texts=[], angle=45,
+    obj.add_cube(width=227, height=227,  factor=0.5, depth=64, texts=[], angle=45,
                  color="#002366", kernel_size=None,
                  filter_color="yellow", line_gap=10, component_gap=5)
-    obj.add_cube(square_size=227, factor=0.5, depth=64, texts=[], angle=45,
+    obj.add_cube(width=227, height=227, factor=0.5, depth=64, texts=[], angle=45,
                  color="#002366", kernel_size=None,
                  filter_color="yellow", line_gap=10, component_gap=-30)
-    obj.add_cube(square_size=227, factor=0.5, depth=64, texts=[], angle=45,
+    obj.add_cube(width=227, height=227, factor=0.5, depth=64, texts=[], angle=45,
                  color="#002366", kernel_size=None,
                  filter_color="yellow", line_gap=10, component_gap=-30)
 
@@ -176,10 +176,10 @@ def create_vgg16_net():
                  filter_color="yellow", line_gap=10)
     """
 
-    obj.add_cube(square_size=113, factor=0.5, depth=128, texts=[], angle=45,
+    obj.add_cube(width=113, height=113, factor=0.5, depth=128, texts=[], angle=45,
                  color="#002366", kernel_size=None,
                  filter_color="yellow", line_gap=10, component_gap=5)
-    obj.add_cube(square_size=113, factor=0.5, depth=128, texts=[], angle=45,
+    obj.add_cube(width=113, height=113, factor=0.5, depth=128, texts=[], angle=45,
                  color="#002366", kernel_size=None,
                  filter_color="yellow", line_gap=10, component_gap=-80)
 
@@ -190,25 +190,25 @@ def create_vgg16_net():
                  filter_color="yellow", line_gap=10)
     """
 
-    obj.add_cube(square_size=56, factor=0.5, depth=256, texts=[], angle=45,
+    obj.add_cube(width=56, height=56, factor=0.5, depth=256, texts=[], angle=45,
                  color="#002366", kernel_size=None,
                  filter_color="yellow", line_gap=10, component_gap=5)
-    obj.add_cube(square_size=56, factor=0.5, depth=256, texts=[], angle=45,
+    obj.add_cube(width=56, height=56, factor=0.5, depth=256, texts=[], angle=45,
                  color="#002366", kernel_size=None,
                  filter_color="yellow", line_gap=10, component_gap=-170)
-    obj.add_cube(square_size=56, factor=0.5, depth=256, texts=[], angle=45,
+    obj.add_cube(width=56, height=56, factor=0.5, depth=256, texts=[], angle=45,
                  color="#002366", kernel_size=None,
                  filter_color="yellow", line_gap=10, component_gap=-170)
 
     obj.add_arrow_with_text(component_gap=5, length=30, triangle_size=5, texts=[], line_gap=1, forced_x_change=-120)
 
-    obj.add_cube(square_size=28, factor=0.5, depth=512, texts=[], angle=45,
+    obj.add_cube(width=28, height=28, factor=0.5, depth=512, texts=[], angle=45,
                  color="#002366", kernel_size=None,
                  filter_color="yellow", line_gap=10, component_gap=5)
-    obj.add_cube(square_size=28, factor=0.5, depth=512, texts=[], angle=45,
+    obj.add_cube(width=28, height=28, factor=0.5, depth=512, texts=[], angle=45,
                  color="#002366", kernel_size=None,
                  filter_color="yellow", line_gap=10, component_gap=-350)
-    obj.add_cube(square_size=28, factor=0.5, depth=512, texts=[], angle=45,
+    obj.add_cube(width=28, height=28, factor=0.5, depth=512, texts=[], angle=45,
                  color="#002366", kernel_size=None,
                  filter_color="yellow", line_gap=10, component_gap=-350)
 
@@ -219,13 +219,13 @@ def create_vgg16_net():
                  filter_color="yellow", line_gap=10)
     """
 
-    obj.add_cube(square_size=14, factor=0.5, depth=512, texts=[], angle=45,
+    obj.add_cube(width=14, height=14, factor=0.5, depth=512, texts=[], angle=45,
                  color="#002366", kernel_size=None,
                  filter_color="yellow", line_gap=10, component_gap=5)
-    obj.add_cube(square_size=14, factor=0.5, depth=512, texts=[], angle=45,
+    obj.add_cube(width=14, height=14, factor=0.5, depth=512, texts=[], angle=45,
                  color="#002366", kernel_size=None,
                  filter_color="yellow", line_gap=10, component_gap=-350)
-    obj.add_cube(square_size=14, factor=0.5, depth=512, texts=[], angle=45,
+    obj.add_cube(width=14, height=14, factor=0.5, depth=512, texts=[], angle=45,
                  color="#002366", kernel_size=None,
                  filter_color="yellow", line_gap=10, component_gap=-350)
 
@@ -246,5 +246,5 @@ def create_vgg16_net():
 
 
 #create_alex_net()
-#create_leaf_net()
-create_vgg16_net()
+create_leaf_net()
+#create_vgg16_net()

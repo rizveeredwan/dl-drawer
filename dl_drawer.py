@@ -35,20 +35,19 @@ class DLDrawer:
 
         self.minx, self.miny, self.maxx, self.maxy = stx, sty, stx, sty
 
-    def draw_cube(self, stx, sty, square_size, factor, depth, texts=None, angle=30, color="grey", kernel_size=None,
+    def draw_cube(self, stx, sty, width, height, factor, depth, texts=None, angle=30, color="grey", kernel_size=None,
                   filter_color="yellow", line_gap=10, recursion=0):
         # bottom point in sent
-        sq = square_size * factor
-        #width_factor = width*factor
-        #height_factor = height*factor
+        width_factor = width*factor
+        height_factor = height*factor
         theta = angle * math.pi / 180.0
         x = stx
-        y = sty - sq
-        r1 = [(x, y), (x + sq, y), (x + sq, y + sq), (x, y + sq)]  # front
+        y = sty - height_factor
+        r1 = [(x, y), (x + width_factor, y), (x + width_factor, y + height_factor), (x, y + height_factor)]  # front
         r2 = [(x + depth * sin(theta), y - depth * cos(theta)),  # back
-              (x + sq + depth * sin(theta), y - depth * cos(theta)),
-              (x + sq + depth * sin(theta), y + sq - depth * cos(theta)),
-              (x + depth * sin(theta), y + sq - depth * cos(theta))]
+              (x + width_factor + depth * sin(theta), y - depth * cos(theta)),
+              (x + width_factor + depth * sin(theta), y + height_factor - depth * cos(theta)),
+              (x + depth * sin(theta), y + height_factor - depth * cos(theta))]
         self.img1.polygon(r2, fill=color, outline="black")
         self.img1.polygon(r1, fill=color, outline="black")
         self.img1.polygon([r1[0], r2[0], r2[1], r1[1]], fill=color, outline="black")
@@ -80,11 +79,12 @@ class DLDrawer:
             self.img1.rectangle(_filter, fill=filter_color, outline="black")
             """
 
-            self.draw_cube(stx=r1[3][0] + (sq / 4.0), sty=r1[3][1] - (sq / 4.0), square_size=kernel_size, factor=factor,
+            self.draw_cube(stx=r1[3][0] + (width_factor / 4.0), sty=r1[3][1] - (height_factor / 4.0),
+                           width=kernel_size, height=kernel_size, factor=factor,
                            depth=depth, texts=None, angle=angle, color=filter_color, kernel_size=None,
                            filter_color=filter_color, line_gap=line_gap, recursion=0)
 
-            feature_map = str(square_size) + "x" + str(square_size) + "x" + str(depth)
+            feature_map = str(height) + "x" + str(width) + "x" + str(depth)
             self.img1.text((startx, starty + line_gap), feature_map, fill="black", font=self.font)
             bbox = self.img1.textbbox((startx, starty + line_gap), feature_map, font=self.font)
             starty = bbox[3]
@@ -120,7 +120,7 @@ class DLDrawer:
                     ty = bbox[3]+line_gap
 
         # adding the components to call
-        self.components.append(["cube", stx, sty, square_size, factor, depth, texts, angle, color, kernel_size,
+        self.components.append(["cube", stx, sty, width, height, factor, depth, texts, angle, color, kernel_size,
                                 filter_color, line_gap, recursion])
         # print(self.components[-1])
         return sidex, sidey, _filter
@@ -248,11 +248,11 @@ class DLDrawer:
         for i in range(0, len(self.components)):
             print("YEEE ", self.currentx, self.currenty, self.minx, self.maxx, self.miny, self.maxy)
             if self.components[i][0] == 'cube':
-                self.draw_cube(stx=self.components[i][1], sty=self.components[i][2], square_size=self.components[i][3],
-                               factor=self.components[i][4], depth=self.components[i][5], texts=self.components[i][6],
-                               angle=self.components[i][7], color=self.components[i][8],
-                               kernel_size=self.components[i][9], filter_color=self.components[i][10],
-                               line_gap=self.components[i][11], recursion=self.components[i][12])
+                self.draw_cube(stx=self.components[i][1], sty=self.components[i][2], width=self.components[i][3], height=self.components[i][4],
+                               factor=self.components[i][5], depth=self.components[i][6], texts=self.components[i][7],
+                               angle=self.components[i][8], color=self.components[i][9],
+                               kernel_size=self.components[i][10], filter_color=self.components[i][11],
+                               line_gap=self.components[i][12], recursion=self.components[i][13])
             if self.components[i][0] == "text":
                 self.write_text(stx=self.components[i][1], sty=self.components[i][2], texts=self.components[i][3],
                                 line_gap=self.components[i][4])
@@ -277,12 +277,13 @@ class DLDrawer:
             file_name = "name.jpg"
         self.img.save(os.path.join(file_name))
 
-    def add_cube(self, square_size=40, factor=2, depth=100, texts="CONV 1", angle=45, color="grey", kernel_size=11,
+    def add_cube(self, width=40, height=40, factor=2, depth=100, texts="CONV 1", angle=45, color="grey", kernel_size=11,
                  filter_color="yellow", line_gap=10, component_gap=10, forced_x_change=0, forced_y_change=0):
         recursion = 0
         if kernel_size is not None:
             recursion = 1
-        _x, _y, _filter = self.draw_cube(stx=self.currentx + component_gap + forced_x_change, sty=self.currenty + forced_y_change, square_size=square_size,
+        _x, _y, _filter = self.draw_cube(stx=self.currentx + component_gap + forced_x_change, sty=self.currenty + forced_y_change,
+                                         width=width, height=height,
                                          factor=factor, depth=depth, texts=texts, angle=angle, color=color,
                                          kernel_size=kernel_size, filter_color=filter_color, line_gap=line_gap,
                                          recursion=recursion)
