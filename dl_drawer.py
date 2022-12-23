@@ -39,6 +39,8 @@ class DLDrawer:
                   filter_color="yellow", line_gap=10, recursion=0):
         # bottom point in sent
         sq = square_size * factor
+        #width_factor = width*factor
+        #height_factor = height*factor
         theta = angle * math.pi / 180.0
         x = stx
         y = sty - sq
@@ -155,11 +157,15 @@ class DLDrawer:
         if self.text_aligny is None:
             self.text_aligny = math.ceil((sty + y) / 2.0)
         if grid is True:
-            for i in range(y, y + height, grid_gap):
+            i = y
+            while i < (y+height):
                 self.img1.line([(x, i), (x + width, i)], fill=grid_color)
+                i += grid_gap
             print(f"{x} {x + width} {grid_gap}")
-            for i in range(x, x + width, grid_gap):
+            i = x
+            while i < x+width:
                 self.img1.line([(i, y), (i, y + height)], fill=grid_color)
+                i += grid_gap
         if circle is True:
             cnt = 0
             i = y
