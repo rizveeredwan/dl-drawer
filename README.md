@@ -75,7 +75,7 @@ obj.add_rectangle(component_gap=5, width=30, height=100, color="#FF8A8A", grid=F
 obj.render("alex_net.jpg")
 
 ```
-![AlexNet](https://https://github.com/rizveeredwan/dl-drawer/blob/master/alex_net.jpg?raw=true)
+![AlexNet](https://github.com/rizveeredwan/dl-drawer/blob/main/alex_net.jpg)
 
 ## Shapes and Functions 
 
