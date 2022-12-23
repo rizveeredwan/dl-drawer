@@ -1,4 +1,4 @@
-# dl-drawer: Deep Learning Drawer Tool 
+# dl-drawer: Deep Learning Architectures Drawer Tool 
 A python module to automate drawing for various deep learning architectures. 
 
 ## Motivation: Why we might need dl-drawer
@@ -78,7 +78,7 @@ obj.render("alex_net.jpg")
 ![AlexNet](./alex_net.jpg)
 - AlextNet Generated Using this library 
 
-## Shapes
+## Shapes and Functions
 Currently, we support following shapes,
 - Cube 
 
@@ -117,3 +117,32 @@ obj.add_multi_plane_image(component_gap=5, width=227, height=227, factor=1, plan
 obj.add_arrow_with_text(component_gap=5, length=100, triangle_size=5, texts=["Arrow", "with text"], line_gap=1)
 ```
 ![Arrow With Text](./arrow_with_text.jpg)
+
+## Common Function Parameters
+These are some of the common attributes that you can tweak and customize your architecture's each component shape
+
+- ``width``: Width of the rectangle or cubic shapes
+- ``height``: Height of the rectangle or cubic shapes 
+- ``depth``: Depth of the cubic shapes 
+- ``kernel_size``: Size of the kernel or filer, e.g, 3 for (3 x 3)
+- ``factor``: Factor that is multiplied with width, height, depth and kernel size to scale
+- ``texts``: A list of strings or a single string, that will be written. For the list of strings, each one will be written one after one.
+- ``angle``: Angle in degrees to control the slope of cubic shapes' sides. Default value ``45``
+- ``color``: Color of the corresponding shape which will be used to fill. Default ``grey``
+- ``filter_color``: Color of the filter that is placed within cubic shapes. Default ``yellow``
+- ``line_gap``: Line gap in pixels between multi line texts. Default ``1``
+- ``component_gap``: Horizontal gap in pixels between two components placed side by side. Default ``10``
+- ``forced_x_change``: The placement of each component is automatically calculated. But you can enforce the change applying value here. Default ``0``. It enforces change in x-axis.
+- ``forced_y_change``: This enforces change in y-axis. Default value for both forced changes is ``0``. 
+
+``grid=False``, ``grid_gap=5``, ``grid_color="black"`` attributes are available for ``add_rectangle`` functions to control the drawn grades. These attributes are also available for `` add_multi_plane_image`` function. ``add_multi_plane_image`` function also contains another attribute named as ``plane_shift`` to control the gap in x-axis among the adjacent planes. 
+
+``circle=True, circle_color="white", cycle_gap=5,``, attributes are also available to draw circles representing neurons for ``add_rectangle`` function. 
+
+If ``kernel_size`` is none then kernels are omitted from drawn in cubic shapes. 
+
+The design is fairly very simple. ``dl_drawer.py`` controls all the algorithm and logic. 
+
+
+## Support and Contributions
+- For any kind of support please email me at rizveeredwan.csedu@gmail.com

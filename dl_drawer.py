@@ -1,7 +1,5 @@
 import math
 import os
-import numpy as np
-import cv2
 from PIL import Image, ImageDraw
 from math import sin, cos, tan, pi
 from PIL import ImageFont
@@ -161,7 +159,6 @@ class DLDrawer:
             while i < (y+height):
                 self.img1.line([(x, i), (x + width, i)], fill=grid_color)
                 i += grid_gap
-            print(f"{x} {x + width} {grid_gap}")
             i = x
             while i < x+width:
                 self.img1.line([(i, y), (i, y + height)], fill=grid_color)
@@ -224,7 +221,6 @@ class DLDrawer:
         return maxx
 
     def negative_shift(self):
-        print(f"min {self.miny}")
         min_y_value = None
         f = False
         if self.miny < 0:
@@ -246,7 +242,6 @@ class DLDrawer:
         self.img = Image.new("RGB", (self.width, self.height), 'white')
         self.img1 = ImageDraw.Draw(self.img)
         for i in range(0, len(self.components)):
-            print("YEEE ", self.currentx, self.currenty, self.minx, self.maxx, self.miny, self.maxy)
             if self.components[i][0] == 'cube':
                 self.draw_cube(stx=self.components[i][1], sty=self.components[i][2], width=self.components[i][3], height=self.components[i][4],
                                factor=self.components[i][5], depth=self.components[i][6], texts=self.components[i][7],
