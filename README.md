@@ -78,5 +78,12 @@ obj.render("alex_net.jpg")
 ![AlexNet](./alex_net.jpg)
 - AlextNet Generated Using this library 
 
-## Shapes and Functions 
+## Shapes
+Currently, we support following shapes,
+- Cube 
+![Cube](./cube.jpg)
+- Rectangle 
+- 
+- Multi Plane Rectangles 
+- Arrow with Text
 
